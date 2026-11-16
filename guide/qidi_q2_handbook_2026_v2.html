@@ -322,6 +322,7 @@
   <a href="#month1">Первый месяц</a>
   <a href="#journal">Журнал печати</a>
   <a href="#grow">Дальше: упражнения</a>
+  <a href="#course">Курс Fusion</a>
   <span class="g">Справка</span>
   <a href="#facts">Что из чатов правда</a>
   <a href="#path">Что смотреть по порядку</a>
@@ -336,7 +337,7 @@
 
 <header class="dochead">
   <div class="dochead-row">
-    <p class="meta"><span class="verpill">v3.2</span> 16 ноября 2026</p>
+    <p class="meta"><span class="verpill">v3.3</span> 16 ноября 2026</p>
     <button type="button" id="theme" class="theme-btn" aria-label="День или ночь">Ночь</button>
   </div>
 </header>
@@ -1069,8 +1070,12 @@ SSH и пароль <code>makerbase</code>. Правка <code>printer.cfg</code
   <tr><td><input type="checkbox" class="ex" aria-label="Упражнение 6 выполнено"></td><td>Куб из первого упражнения, но из PETG с клеем-карандашом.</td><td>Размеры записаны, деталь снята, покрытие PEI не сорвано.</td></tr>
   <tr><td><input type="checkbox" class="ex" aria-label="Упражнение 7 выполнено"></td><td>Измерить дома предмет, который хочется заменить (заглушка, держатель, ножка). Найти простую модель или поправить чужую, напечатать.</td><td>Деталь работает на своём месте, а не только похожа на нужную. С первого раза или с третьего, неважно.</td></tr>
 </table>
-<h3>Когда искать курсы</h3>
-<p>Курс полезнее, когда уже есть журнал, пара упражнений и список вопросов: не хватает моделирования, слайсера или материалов? Тогда выбирают курс по вопросам, а не по красивой рекламе. Совет, не приказ: запись уже есть — идите, упражнения не помешают.</p>
+<h3 id="course">Следующий шаг: курс моделирования</h3>
+<p>Этот учебник закрывает принтер и первую печать. Дальше обычно упираются не в кнопки Q2, а в моделирование: чужую деталь с Printables уже печатаете, свою с нуля — ещё нет. Туда и берут <strong>один</strong> курс с куратором, а не три вуза подряд «с нуля до про».</p>
+<div class="call ok"><strong>Конкретный следующий шаг.</strong> Когда есть журнал и хотя бы куб с кронштейном из упражнений выше — <a href="https://cad.itmo.ru/courses/plain/online/autodesk-fusion-360-modeling-basics">ИТМО, «Основы моделирования в Autodesk Fusion 360»</a>: русский, с нуля, чат с куратором, задания с проверкой, удостоверение о повышении квалификации. Ориентир цены на осень 2026 — около 20 000 ₽; перед оплатой сверьте сумму и условия на странице курса.</div>
+<p>Почему Fusion, а не стек «КОМПАС → ещё КОМПАС → Inventor»: для деталей под FDM и обмена файлами STEP/STL Fusion проще с нуля и привычнее за пределами чисто «ГОСТовских» заказов. КОМПАС имеет смысл, если ядро работы — чертежи ЕСКД под российские заводы; как единственный первый курс под печать на Q2 он чаще лишний. Второй платный курс — только когда упрётесь в потолок первого, не «на всякий случай» в день записи.</p>
+<p>Параллельно с уроками Fusion оставляйте Q2 в деле: те же упражнения, журнал, свои мелкие детали. Курс учит строить модель; станок учит, как она ложится слоями. Одно без другого быстро забывается.</p>
+<p>Курс полезнее, когда уже есть список вопросов: не хватает моделирования, слайсера или материалов? Тогда выбирают по вопросам, а не по красивой рекламе. Запись уже есть — идите, упражнения не помешают.</p>
 <h3>Как просить помощи</h3>
 <p>В поддержку или в чат положите рядом: модель и прошивку, пластик (бренд и температуры), слайсер и профиль, крупное фото дефекта и что уже пробовали. Без этого ответ почти всегда один: «попробуйте всё сразу».</p>
 
@@ -1107,7 +1112,7 @@ SSH и пароль <code>makerbase</code>. Правка <code>printer.cfg</code
   <li>Видео Дмитрия Соркина «Краткий гайд по 3D печати. Настройка принтера с нуля» (<a href="https://www.youtube.com/watch?v=doenKnVk0Ec">смотреть</a>; канал <a href="https://www.youtube.com/@SorkinDmitry">@SorkinDmitry</a>). Берите общую картину: слайсер, пластик, первый слой. Ручной уровень, e-steps и PID на Q2 уже сделаны заводом — эти куски пропускайте. Кнопки в ролике от другого класса принтеров. Отдельного «первый запуск именно Q2» у Соркина нет — не ищите мифический ролик.</li>
   <li>Orca уже стоит — после первой детали из Studio: официальный getting started / wiki Orca (интерфейс на английском совпадёт). Главное оттуда — три пресета printer / filament / process и Preview по слоям. Слоты Box и Arc fitting — см. раздел про слайсер.</li>
   <li>Книги, если бумаге удобнее, чем ленте: Clifford Smyth, <em>Functional Design for 3D Printing</em> — как проектировать под слой; Sean Aranda, <em>3D Printing Failures</em> — каталог дефектов. Обе на английском, обе не про Q2, обе до сих пор совпадают с тем, что видно на столе.</li>
-  <li>Курс моделирования, когда куб и кронштейн уже получаются: <a href="https://cad.itmo.ru/courses/plain/online/autodesk-fusion-360-modeling-basics">ИТМО, основы Autodesk Fusion 360</a>.</li>
+  <li>Следующий шаг после куба и кронштейна — <a href="#course">один курс Fusion</a>: <a href="https://cad.itmo.ru/courses/plain/online/autodesk-fusion-360-modeling-basics">ИТМО, основы Autodesk Fusion 360</a> (~20 тыс., куратор, удостоверение). Не три курса КОМПАС подряд «на вырост».</li>
   <li>Только если на обычных скоростях остаётся эхо или Z живёт своей жизнью: <a href="https://k3d.tech/printers/qidi_q2/">статья K3D по Q2</a>. Сначала прочитать жёлтую плашку про ответственность и версии прошивки.</li>
 </ol>
 
@@ -1136,7 +1141,7 @@ SSH и пароль <code>makerbase</code>. Правка <code>printer.cfg</code
 
 
 <h2 id="free">Бесплатные материалы и уроки</h2>
-<p>Всё ниже открывается в браузере бесплатно. Платные курсы вроде ИТМО — когда уже есть журнал и несколько своих деталей. Температуры и кнопки с чужого принтера на Q2 не копируйте: физика та же, меню другое.</p>
+<p>Всё ниже открывается в браузере бесплатно. Платный курс моделирования — когда уже есть журнал и несколько своих деталей: конкретно <a href="#course">ИТМО Fusion</a>. Температуры и кнопки с чужого принтера на Q2 не копируйте: физика та же, меню другое.</p>
 <div class="free"><strong>Документация вашего железа.</strong> <a href="https://wiki.qidi3d.com/en/Q2">QIDI Q2 Wiki</a>, <a href="https://wiki.qidi3d.com/en/QIDIBOX">QIDI Box Wiki</a>, прошивка <a href="https://www.qidimaker.com/en/downloads/firmware/Q2">QIDI Maker</a>, Studio <a href="https://github.com/QIDITECH/QIDIStudio/releases">GitHub</a>.</div>
 <div class="free"><strong>Слайсер.</strong> <a href="https://github.com/OrcaSlicer/OrcaSlicer/releases">Orca Slicer</a> (бесплатно) + <a href="https://www.orcaslicer.com/wiki/">wiki Orca</a>. На этом комплекте первая печать — в Studio; Orca рядом, см. раздел про слайсер.</div>
 <div class="free"><strong>Материалы и дефекты.</strong> <a href="https://help.prusa3d.com/filament-material-guide">Prusa Filament Material Guide</a>, <a href="https://help.prusa3d.com/article/first-layer-issues_1804">First layer issues</a>, <a href="https://help.prusa3d.com/article/drying-filament_332086">Drying filament</a>, <a href="https://ellis3dp.com/Print-Tuning-Guide/">Ellis Print Tuning Guide</a>.</div>
@@ -1190,6 +1195,7 @@ SSH и пароль <code>makerbase</code>. Правка <code>printer.cfg</code
   <tr><td>Пошаговая настройка Q2 со снимками экрана</td><td>Первая загрузка, сеть, автоуровень, первый слой</td><td><a href="https://printer-hub.ru/en/posts/qidi-q2-setup-guide">printer-hub.ru, Q2 Setup Guide</a> (на английском, это не документ производителя)</td></tr>
   <tr><td>Вики сообщества Q2</td><td>Типичные проблемы, настройки, модели для печати. Правки конфигурации по ней не делают в первый месяц</td><td><a href="https://github.com/qidi-community/q2-wiki">qidi-community/q2-wiki</a></td></tr>
   <tr><td colspan="3"><strong>Уроки (русский и английский)</strong></td></tr>
+  <tr><td>ИТМО: основы Autodesk Fusion 360</td><td>Следующий шаг после первых печатей: моделирование с нуля, куратор, удостоверение (~20 тыс.)</td><td><a href="https://cad.itmo.ru/courses/plain/online/autodesk-fusion-360-modeling-basics">cad.itmo.ru</a> — см. <a href="#course">блок про курс</a></td></tr>
   <tr><td>Соркин: «Краткий гайд по 3D печати. Настройка принтера с нуля»</td><td>Главный совет новичкам: порядок действий от первого запуска. Для Q2 пропускать ручной уровень, e-steps, PID</td><td><a href="https://www.youtube.com/watch?v=doenKnVk0Ec">youtube.com</a>, канал <a href="https://www.youtube.com/@SorkinDmitry">@SorkinDmitry</a></td></tr>
   <tr><td>Printer Hub: «OrcaSlicer с нуля: установка, настройка и калибровка»</td><td>Русская статья про слайсер для начинающих</td><td><a href="https://printer-hub.ru/tags/guides">printer-hub.ru, раздел «Гайды»</a> (найдите статью по названию)</td></tr>
   <tr><td>Teaching Tech: Beginners Guide to 3D Printer Slicers</td><td>Что такое слайсер, форматы STL и G-код, популярные слайсеры (английский)</td><td><a href="https://classcentral.com/classroom/youtube-beginners-guide-to-3d-printer-slicers-130763">страница курса на Class Central</a>, оттуда ссылка на YouTube</td></tr>
@@ -1224,6 +1230,7 @@ SSH и пароль <code>makerbase</code>. Правка <code>printer.cfg</code
   <li><label><input type="checkbox"> Понятно, какой пластик идёт через Box, а TPU 95A — нет</label></li>
   <li><label><input type="checkbox"> Температуры своей катушки записаны на бумажке</label></li>
   <li><label><input type="checkbox"> PETG с клеем, и только потом ASA и TPU</label></li>
+  <li><label><input type="checkbox"> Журнал и пара упражнений есть — пора к курсу Fusion (ИТМО), не к трём курсам «на вырост»</label></li>
 </ul>
 <p><span id="state"></span> <button type="button" class="reset" id="reset">Сбросить галочки</button></p>
 <p class="meta">Галочки хранятся в этом браузере. На другом компьютере список начнётся сначала.</p>
