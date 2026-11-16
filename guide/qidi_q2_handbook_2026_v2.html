@@ -64,7 +64,9 @@
   th { font-weight: 650; }
   figure { margin: 16px 0 20px; }
   figcaption { font-family: "Segoe UI", Helvetica, Arial, sans-serif; font-size: 13px; color: var(--muted); margin-top: 6px; }
-  svg { width: 100%; height: auto; background: var(--paper); border: 1px solid var(--line); }
+  svg { max-width: 100%; width: 100%; height: auto; background: var(--paper); border: 1px solid var(--line); }
+  img { max-width: 100%; height: auto; }
+  main { overflow-x: clip; }
   ol.steps > li { margin: 8px 0; }
   .check { font-family: "Segoe UI", Helvetica, Arial, sans-serif; font-size: 15px; list-style: none; padding: 0; }
   .check li { margin: 6px 0; }
@@ -111,12 +113,30 @@
   .free { border-left: 3px solid var(--accent); padding-left: 12px; margin: 10px 0; }
 
 
-  figure.doc { margin: 16px 0 22px; position: relative; }
+  .grid2 {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0 18px;
+  }
+  .grid2 .tile {
+    border: 1px solid var(--line); background: var(--paper); padding: 12px 14px;
+  }
+  .grid2 .tile h3 { margin-top: 0; }
+  @media (max-width: 700px) {
+    .grid2 { grid-template-columns: 1fr; }
+  }
+  figure.doc { margin: 16px 0 22px; position: relative; max-width: 100%; overflow: hidden; }
   figure.doc img, .imgrow img {
-    display: block; width: 100%; height: auto; max-width: 100%;
+    display: block; width: 100%; max-width: 100%; height: auto;
     border: 1px solid var(--line); background: #fff;
     cursor: zoom-in;
+    object-fit: contain;
   }
+  /* SVG without reliable intrinsic size used to collapse to ~0–2px on mobile */
+  figure.doc img[src$=".svg"], .imgrow img[src$=".svg"] {
+    min-height: min(42vw, 220px);
+    background: var(--paper);
+  }
+  html[data-theme="dark"] figure.doc img[src$=".svg"],
+  html[data-theme="dark"] .imgrow img[src$=".svg"] { background: #111; }
   figure.doc .zoomhint {
     font-family: "Segoe UI", Helvetica, Arial, sans-serif;
     font-size: 12px; color: var(--accent); margin-top: 4px;
@@ -175,6 +195,28 @@
   }
   #lb .lb-nav button.on { background: #4a4034; border-color: #c9b89a; }
 
+
+  .theme-btn {
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif; font-size: 13px;
+    padding: 8px 12px; min-height: 40px; border: 1px solid var(--line);
+    background: var(--accent-soft); color: var(--accent); cursor: pointer; border-radius: 6px;
+    font-weight: 650;
+  }
+  .theme-btn:hover { filter: brightness(0.97); }
+  @media (max-width: 900px) {
+    .dochead {
+      position: sticky; top: 0; z-index: 8;
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      backdrop-filter: blur(8px);
+      padding: 8px 0 10px; margin: 0 0 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .theme-btn { min-width: 5.5rem; min-height: 44px; }
+    figure.doc img[src$=".svg"], .imgrow img[src$=".svg"] { min-height: 160px; }
+    .imgrow { grid-template-columns: 1fr !important; max-width: none; }
+    .imgrow.docs, .imgrow.screens, .imgrow.one { max-width: none; }
+  }
+
 </style>
 </head>
 <body>
@@ -226,7 +268,7 @@
 
 <header class="dochead">
   <div class="dochead-row">
-    <p class="meta"><span class="verpill">v3.0</span> 16 ноября 2026</p>
+    <p class="meta"><span class="verpill">v3.1</span> 16 ноября 2026</p>
     <button type="button" id="theme" class="theme-btn" aria-label="День или ночь">Ночь</button>
   </div>
 </header>
@@ -1276,22 +1318,35 @@ onScroll();
   if (!btn) return;
   const key = "q2-handbook-theme";
   const sysDark = () => matchMedia("(prefers-color-scheme: dark)").matches;
+  function effective() {
+    const saved = root.getAttribute("data-theme");
+    if (saved === "dark" || saved === "light") return saved;
+    return sysDark() ? "dark" : "light";
+  }
+  function paint() {
+    const mode = effective();
+    btn.textContent = mode === "dark" ? "День" : "Ночь";
+    btn.title = mode === "dark" ? "Включить дневной режим" : "Включить ночной режим";
+    btn.setAttribute("aria-label", btn.title);
+    btn.setAttribute("aria-pressed", mode === "dark" ? "true" : "false");
+  }
   function apply(mode) {
     if (mode === "dark" || mode === "light") root.setAttribute("data-theme", mode);
     else root.removeAttribute("data-theme");
-    const dark = mode === "dark" || (!mode && sysDark()) || (mode !== "light" && root.getAttribute("data-theme") === "dark");
-    const effective = root.getAttribute("data-theme") || (sysDark() ? "dark" : "light");
-    btn.textContent = effective === "dark" ? "День" : "Ночь";
-    btn.setAttribute("aria-label", effective === "dark" ? "Включить дневную тему" : "Включить ночную тему");
+    paint();
   }
   let saved = null;
   try { saved = localStorage.getItem(key); } catch (e) {}
   apply(saved === "dark" || saved === "light" ? saved : null);
   btn.addEventListener("click", () => {
-    const cur = root.getAttribute("data-theme") || (sysDark() ? "dark" : "light");
-    const next = cur === "dark" ? "light" : "dark";
+    const next = effective() === "dark" ? "light" : "dark";
     try { localStorage.setItem(key, next); } catch (e) {}
     apply(next);
+  });
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    let s = null;
+    try { s = localStorage.getItem(key); } catch (e) {}
+    if (s !== "dark" && s !== "light") apply(null);
   });
 })();
 </script>
