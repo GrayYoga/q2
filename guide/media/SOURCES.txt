@@ -1,0 +1,29 @@
+Источники изображений (учебный комплект; перед коммерческой перепечаткой сверьте лицензии)
+
+QIDI Wiki / документация производителя (wiki.qidi3d.com):
+  q2-overview.png, unbox-*.png, first-layer-*.png/jpg, screen-*.png,
+  load-filament-*.png, external-filament-*.jpg, disable-box-screen.png,
+  studio-*.png, wifi-connect.png, box-product.png
+
+Официальный PDF «BOX Start Guide Q2 Series» (3d.nice-cdn.com):
+  box-usage-en.png, box-parts-en.png, box-specs-en.png,
+  box-usage-ru.png, box-parts-ru.png, box-specs-ru.png, box-unbox-ru.png
+  (страницы PDF отрендерены локально pdftoppm)
+
+Wikimedia Commons (свободные лицензии, см. страницы файлов на commons):
+  fdm-zureks.png — CC BY-SA (Zureks)
+  fdm-schematic.png — Schematic representation of Fused Filament Fabrication 01
+  fdm-diagram.svg — FDM printing diagram
+  first-layer-gap.png / .svg — 3D printing calibration build plate first layer gap
+  caliper-vernier.svg, caliper-legends.svg — Vernier caliper diagrams
+  caliper-digital.jpg — Digital caliper.jpg
+
+Prusa Knowledge Base (help.prusa3d.com) — справочные фото первого слоя / PEI:
+  prusa-first-layer-calib.jpg, prusa-first-layer-issues.jpg, prusa-pei-sheet.jpg
+  (принтер другой; физика первого слоя та же)
+
+Пользовательские снимки из чатов (только домашний офлайн, не для публикации):
+  box-ptfe-saver-chat.jpg — мод PTFE/кронштейн на входе фидера (не штатный QIDI)
+  box-desiccant-bambu-ref.jpg — силикагель в AMS Bambu как идея; для QIDI Box — отдельные модели
+
+Не выкладывать этот HTML и папку media в открытый доступ без проверки лицензий каждого файла.

@@ -1,0 +1,23 @@
+# Тяжёлое и личное — в GitHub не уезжает
+whisper_env/
+K3D.tech*/
+QIDI RUSSIA CHAT/
+audio.mp3
+*.mp3
+transcription.vtt
+first_try_encode_audio.txt
+get_text_from_audio_from_yt_video.py
+курсы по компас*/
+qidi q2 man/
+
+# Локальный мусор
+.DS_Store
+*.log
+__pycache__/
+.venv/
+.env
+.env.*
+*.zip
+guide/guide.zip
+.claude/
+.cursor/
