@@ -22,8 +22,8 @@ Prusa Knowledge Base (help.prusa3d.com) — справочные фото пер
   prusa-first-layer-calib.jpg, prusa-first-layer-issues.jpg, prusa-pei-sheet.jpg
   (принтер другой; физика первого слоя та же)
 
-Пользовательские снимки из чатов (только домашний офлайн, не для публикации):
-  box-ptfe-saver-chat.jpg — мод PTFE/кронштейн на входе фидера (не штатный QIDI)
+Пользовательские снимки из чатов (учебный контекст; не штатный QIDI):
+  box-ptfe-saver-chat.jpg — мод PTFE/кронштейн на входе фидера
   box-desiccant-bambu-ref.jpg — силикагель в AMS Bambu как идея; для QIDI Box — отдельные модели
 
-Не выкладывать этот HTML и папку media в открытый доступ без проверки лицензий каждого файла.
+Перед коммерческой перепечаткой сверьте лицензию каждого файла. Превью OG: media/og-cover.jpg.
